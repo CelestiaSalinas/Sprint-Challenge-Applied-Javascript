@@ -7,3 +7,23 @@
 //
 //  The tab component should look like this:
 //    <div class="tab">topic here</div>
+
+// Make a request for a user with a given ID
+axios
+  .get("https://lambda-times-backend.herokuapp.com/topics")
+  .then(function(response) {
+    // handle success
+    console.log(response);
+    Object.keys(response.data).forEach(key => {
+      const tab = document.createElement("div");
+      tab.classList.add("tab");
+      tab.textContent = key;
+    });
+  })
+  .catch(function(error) {
+    // handle error
+    console.log(error);
+  })
+  .finally(function() {
+    // always executed
+  });
