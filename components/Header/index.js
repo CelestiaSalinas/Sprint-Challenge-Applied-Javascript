@@ -39,7 +39,7 @@ function createHeader(date, title, temp) {
   headerContainer.append(header);
   return header;
 }
-
+createHeader("SMARCH 28, 2019", "Lambda Times", "98°");
 // function createArticle(title, date, para1, para2, para3) {
 //     const create = element => document.createElement(element);
 //     const article = create("div");

@@ -14,10 +14,14 @@ axios
   .then(function(response) {
     // handle success
     console.log(response);
-    Object.keys(response.data).forEach(key => {
+    response.data.topics.forEach(key => {
       const tab = document.createElement("div");
-      tab.classList.add("tab");
       tab.textContent = key;
+      tab.classList.add("tab");
+
+      const topicContainer = document.querySelector(".topics");
+
+      topicContainer.appendChild(tab);
     });
   })
   .catch(function(error) {
